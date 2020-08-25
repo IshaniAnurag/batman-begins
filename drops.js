@@ -1,0 +1,28 @@
+class drops{
+constructor(x,y){
+    var options={
+        friction:1,
+        density:1,
+        restitution=0.05
+    }
+    this.radius=10;
+    this.body=Bodies.circle(x,y,10,options);
+    this.color=color("blue");
+     World.add(world,this.body);
+
+}
+display(){
+    var pos=this.body.position;
+    var angle=this.body.angle;
+
+    push();
+    translate(pos.x,pos.y);
+    rotate(angle);
+    noStroke();
+    fill(this.color);
+    ellipseMode(RADIUS);
+    ellipse( 0, 0,10,10);
+    pop();
+}
+}
+
